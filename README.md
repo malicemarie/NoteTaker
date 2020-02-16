@@ -1,28 +1,10 @@
 # Unit 11 Express Homework: Note Taker
 
-## Description
+## Note Taker Web Application
 
-[Demo](https://codingbootcamp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=444a782e-0d28-4c1c-893c-ab57001eb7d3)
+[Note Taker](https://malicemarie.github.io/NoteTaker/)
 
-Create an application that can be used to write, save, and delete notes. This application will use an express backend and save and retrieve note data from a JSON file.
-
-- The application frontend has already been created, it's your job to build the backend and connect the two.
-
-- The following HTML routes should be created:
-
-  - GET `/notes` - Should return the `notes.html` file.
-
-  - GET `*` - Should return the `index.html` file
-
-- The application should have a `db.json` file on the backend that will be used to store and retrieve notes using the `fs` module.
-
-- The following API routes should be created:
-
-  - GET `/api/notes` - Should read the `db.json` file and return all saved notes as JSON.
-
-  - POST `/api/notes` - Should recieve a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client.
-
-  - DELETE `/api/notes/:id` - Should recieve a query paramter containing the id of a note to delete. This means you'll need to find a way to give each note a unique `id` when it's saved. In order to delete a note, you'll need to read all notes from the `db.json` file, remove the note with the given `id` property, and then rewrite the notes to the `db.json` file.
+I have created a web application that allows you to create new notes, save, review saved notes & delete notes.
 
 ## User Story
 
@@ -32,48 +14,32 @@ I WANT to be able to delete notes I've written before
 
 SO THAT I can organize my thoughts and keep track of tasks I need to complete
 
+## HTML Routes
+
+- /notes for adding new notes to the library
+- / home page to display in order to get into the note library
+
+## API Routes
+
+- Using a db.json file as the Database for this application
+
+- GET /api/notes reads the database file and displays all the notes in the library
+- POST /api/notes will recieve the new note and write it to the database.
+- DELETE /api/notes/:id will delete a note based on the id that is assigned when the note is saved.
+
 ## Business Context
 
 For users that need to keep track of a lot of information, it's easy to forget or be unable to recall something important. Being able to take persistent notes allows users to have written information available when needed.
 
-## Acceptance Criteria
+## MVP
 
-Application should allow users to create and save notes.
+User can add a new note to the note library, User can view previously saved notes, User can delete previously saved notes.
 
-Application should allow users to view previously saved notes.
+# User Instructions
 
-Application should allow users to delete previously saved notes.
-
-## Bonus
-
-Add the ability to edit previously saved notes
-
----
-
-## Commit Early and Often
-
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
-
-- Your commit history is a signal to employers that you are actively working on projects and learning new skills.
-
-- Your commit history allows you to revert your codebase in the event that you need to return to a previous state.
-
-Follow these guidelines for committing:
-
-- Make single-purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits.
-
-- Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history.
-
-- Don't commit half-done work, for the sake of your collaborators (and your future self!).
-
-- Test your application before you commit to ensure functionality at every step in the development process.
-
-We would like you to have well over 200 commits by graduation, so commit early and often!
-
-## Submission on BCS
-
-You are required to submit the following:
-
-- The URL of the deployed application
-
-- The URL of the GitHub repository
+1. Visit the link at the top of this Readme.
+2. Click Get started
+3. Add a title for your note, & type a note body.
+4. Click the save icon in the top right corner.
+5. To Delete click on the Red trash can icon to the right of your note.
+6. To view previously saved notes click on the title of the note.

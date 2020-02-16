@@ -8,11 +8,11 @@ module.exports = app => {
   app.get("/api/notes", (req, res) => res.json(noteData));
 
   app.post("/api/notes", (req, res) => {
+    noteData.push(req.body);
+
     for (let i = 0; i < noteData.length; i++) {
       noteData[i].id = i + 1;
     }
-
-    noteData.push(req.body);
 
     fs.writeFile("./db/db.json", JSON.stringify(noteData), err => {
       if (err) throw err;
@@ -23,7 +23,6 @@ module.exports = app => {
 
   app.delete("/api/notes/:id", (req, res) => {
     const id = req.params.id;
-    console.log(id);
     let index;
     for (let i in noteData) {
       if (id === noteData[i].id) {
